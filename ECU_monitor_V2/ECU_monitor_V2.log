@@ -1,6 +1,6 @@
 LTspice 24.1.10 for Windows
 Circuit: C:\Users\steph\ec445_neuroguard\ECU_monitor_V2\ECU_monitor_V2.net
-Start Time: Mon Oct 13 04:58:27 2025
+Start Time: Mon Oct 13 09:39:42 2025
 solver = Normal
 Maximum thread count: 20
 tnom = 27
@@ -28,10 +28,12 @@ Gmin = 2.70769e-13
 Gmin = 0
 Gmin stepping succeeded in finding the operating point.
 
-Total elapsed time: 1.401 seconds.
+Total elapsed time: 2.003 seconds.
 
 Files loaded:
 C:\Users\steph\ec445_neuroguard\ECU_monitor_V2\ECU_monitor_V2.net
 C:\Users\steph\AppData\Local\LTspice\lib\cmp\standard.dio
+C:\Users\steph\AppData\Local\LTspice\lib\cmp\standard.mos
 D:\Downloads\slcj017\LM393A.5_1
+C:\Users\steph\AppData\Local\LTspice\lib\sub\NE555.sub
 
