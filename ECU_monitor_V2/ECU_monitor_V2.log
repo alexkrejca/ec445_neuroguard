@@ -1,6 +1,6 @@
 LTspice 24.1.10 for Windows
 Circuit: C:\Users\steph\ec445_neuroguard\ECU_monitor_V2\ECU_monitor_V2.net
-Start Time: Mon Oct 13 09:39:42 2025
+Start Time: Fri Oct 17 11:17:25 2025
 solver = Normal
 Maximum thread count: 20
 tnom = 27
@@ -15,25 +15,53 @@ Gmin = 1.07374
 Gmin = 0.115292
 Gmin = 0.0123794
 Gmin = 0.00132923
-Gmin = 0.000142725
-Gmin = 1.5325e-05
-Gmin = 1.6455e-06
-Gmin = 1.76685e-07
-Gmin = 1.89714e-08
-Gmin = 2.03704e-09
-Gmin = 2.18725e-10
-Gmin = 2.34854e-11
-Gmin = 2.52173e-12
-Gmin = 2.70769e-13
+vernier = 0.5
+vernier = 0.25
+Gmin = 0.000387166
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+Gmin = 0.000373973
+vernier = 0.0078125
+vernier = 0.00390625
+vernier = 0.00195312
+vernier = 0.000976562
+Gmin = 0.000373152
+vernier = 0.000488281
 Gmin = 0
-Gmin stepping succeeded in finding the operating point.
+Gmin stepping failed
 
-Total elapsed time: 2.003 seconds.
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 54.7348%
+Source Step = 56.6288%
+Source Step = 58.5227%
+Source Step = 60.4167%
+Source Step = 62.3106%
+Source Step = 64.2045%
+vernier = 0.09375
+Source Step = 67.0455%
+Source Step = 69.8864%
+Source Step = 72.7273%
+Source Step = 75.5682%
+Source Step = 78.4091%
+vernier = 0.140625
+Source Step = 82.5284%
+Source Step = 86.7898%
+Source Step = 91.0511%
+Source Step = 95.3125%
+Source Step = 99.5739%
+Source stepping succeeded in finding the operating point.
+
+Total elapsed time: 14.577 seconds.
 
 Files loaded:
 C:\Users\steph\ec445_neuroguard\ECU_monitor_V2\ECU_monitor_V2.net
 C:\Users\steph\AppData\Local\LTspice\lib\cmp\standard.dio
 C:\Users\steph\AppData\Local\LTspice\lib\cmp\standard.mos
 D:\Downloads\slcj017\LM393A.5_1
+C:\Users\steph\AppData\Local\LTspice\lib\sub\LTC1157.sub
 C:\Users\steph\AppData\Local\LTspice\lib\sub\NE555.sub
 
