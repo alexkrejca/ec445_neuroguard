@@ -11,18 +11,16 @@ or directly from ESU source.
 First Design of ECU Monitor in LTSpice has been created.
 Simulation Screenshot shown in ECUMonitor folder.  
 2000V AC Source Capacitance Voltage Divider:  
-$$ Ratio \approx \frac{10pF}{10pF + 3900pF} = \frac{10}{3910} \approx \frac{1}{391} $$
+```text
+Ratio ≈ 10pF / (10pF + 3900pF) = 10 / 3910 ≈ 1/391 
 
+This reduces the peak voltage from 1850V down to a much safer level: 
+1850V / 391 ≈ 4.7V
 
-* Period Calculation of Envelope Detector:
-$$ \frac{1}{307kHz} \approx 3.26 \mu s $$
-
-* Time Constant ($\tau$):
-$$ \tau = R \times C = 5,600 \Omega \times 0.000000001 F = 5.6 \mu s $$
-
-* Reference Voltage & Comparator:
-$$ V_{ref} = 5V \times \left( \frac{R_3}{R_6 + R_3} \right) \approx 0.3V $$
-
+▪ 1 / 307kHz ≈ 3.26 µs
+▪ τ = R * C = 5,600 Ω * 0.000000001 F = 5.6 µs 
+▪ V(ref) = 5V * (R3 / (R6 + R3)) ≈ 0.3V
+```
 # 10/6
 All parts received for beginning to assemble first design of ESU Monitor, incuding ad dev board ESP32, comparator, resistors.
 
@@ -34,7 +32,7 @@ bread-board demos of ESU Monitor.
 First breadboard completed, screenshots in ESU Monitor folder. Everything went smoothly.
 
 # 10/14
-Created Timer IC circuit output at 1kHz and 100 us high, and integrated with ESU monitor circuit, uploaded LTSpice in ESU_MONITOR_V2 folder.
+Created Timer IC circuit output at 1kHz and 100 us high, and integrated with ESU monitor circuit, uploaded LTSpice in ESU_MONITOR_V2 folder.  
 **555 Timer High/Low Calculations:**
 
 $$ T_{high} = 0.693 \times R_a \times C $$
