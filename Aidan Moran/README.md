@@ -1,5 +1,6 @@
 # Aidan Moran ECE 445 Lab Notebook #
 Fall 2025, Nuerogaurd, Team 31
+All images, graphs, designs, etc. are in the documents folder
 
 ## 9/11
 Initial meeting with nuerogaurd team. I selected this project as I felt the focus on power electronics and specifically buck converter design matched well with the courses I was taking (ECE 464) and previous internship experience. Main criteria for our scope of the project sounded like 
@@ -101,13 +102,17 @@ Considerations
     
 
 
-#10/10 
+# 10/10 
 - prep for Design document, need to research more the high voltage system
 - If we want the nuerogaurd to be purely powered by a high voltage source, how can we cantrol the high voltage inverter without a 5V dc/low level voltage supply already there. Would be easier to pivot to having an external power source for this.
 - Look at self resonating oscillators/relaxation oscillators, probably the best idea as they do not require active control from low voltage logic and can self resonant from their LC/LCR constants
 
-#11/17
+# 11/17
 PCB has been delayed until after fall break
 
+# 11/30
+
+PCB construction session 
+Parts and PCB have finally arrived, can now start assembly. Total assembly took about 3 hours. No issues with assembly 
   
 
