@@ -19,8 +19,13 @@ Next steps
   - Papers
 
 N. D. Shilev and G. A. Konesky, “Multi-button electrosurgical apparatus,” U.S. Patent 9,326,810, May 3, 2016.
+
 M. Singhal, K. Kiunga, N. Kelhofer, P. Dullur, N. Chigullapally, S. Pappu, and M. L. Oelze, “Expanding the Scope of Intraoperative Neuromonitoring with Nerve-Specific Stimulatory Waveform Design,” Carle Illinois College of Medicine and Department of Electrical and Computer Engineering, University of Illinois Urbana-Champaign, Urbana, IL, USA.
 Chappell AG, Bai J, Yuksel S, Ellis MF. Post-Mastectomy Pain Syndrome: Defining Perioperative Etiologies to Guide New Methods of Prevention for Plastic Surgeons. WORLD JOURNAL OF PLASTIC SURGERY. 2020;
+
+Chappell AG, Bai J, Yuksel S, Ellis MF. Post-Mastectomy Pain Syndrome: Defining Perioperative Etiologies to Guide New Methods of Prevention for Plastic Surgeons. WORLD JOURNAL OF PLASTIC SURGERY. 2020;9(3):247-253.
+
+Coopey S, Keleher A, Daniele K, et al. Careful Where You Cut: Strategies for Successful Nerve-preserving Mastectomy. Plastic and reconstructive surgery Global open. 2024;12(5):e5817-e5817
 
 ## 9/23
 Meeting with team to discuss block diagram 
@@ -88,7 +93,7 @@ Design and simulation is looking good in PSpice for TI
 - Input ripple - 0.8V at 100V AC sine inout 1000Hz
 - Output ripple - 300 mV
   
-##10/5
+## 10/5
 
 PCB layout and design
 Considerations
@@ -100,19 +105,61 @@ Considerations
   - Reference PCB design for LM5186
   - previous experience
     
-
-
-# 10/10 
+## 10/10 
 - prep for Design document, need to research more the high voltage system
 - If we want the nuerogaurd to be purely powered by a high voltage source, how can we cantrol the high voltage inverter without a 5V dc/low level voltage supply already there. Would be easier to pivot to having an external power source for this.
 - Look at self resonating oscillators/relaxation oscillators, probably the best idea as they do not require active control from low voltage logic and can self resonant from their LC/LCR constants
 
-# 11/17
+## 10/15
+Email correspondance with proffesor Fliflet and professor Banerjee discussing options for high voltage measurements. A few key questions must be answered. 
+- What equipment is available that can handle these measurements. Currently, students have acces to 1.5kV max differential probes in the power electronics labaratory.  However, we must engineer for worst case scenaries, not an ideal scenaria. Max open circuit output would be 3.9 kV. Is there any equipment that students have acces to that would allow for this measuremnt, ideally a probe rated for up to 5kV-6kV
+- Alternative measurement options. Could we use a resistive load and current probe to get proxy measurements for voltage, in an inderect manner.
+- SAFETY. How can this measurement be done safely, without risking harm to students. An electrocautyr machine is easily capable of damaging human flesh, and worst case scenario would be permenant damage to student, and potentially death. Are there high voltage encolsures, isolation mechanisms, and remote sensing we can implement to mititgate safety risks ?
+
+  The outputs of the Bovie Electrosurgical generator are given below.
+
+| Mode        | Output Power      | Output Frequency                 | Repetition Rate       | Open Circuit Vpeak max | Crest Factor* (Rated Load) |
+|------------|-------------------|----------------------------------|-----------------------|------------------------|----------------------------|
+| Cut        | 120 W @ 500 Ω     | 357 kHz ± 50 kHz                 | N / A                 | 1250V                  | 2.9 ± 20%                  |
+| Blend      | 90 W @ 800 Ω      | 357 kHz ± 50 kHz                 | 30 kHz ± 5 kHz        | 1850V                  | 3.3 ± 20%                  |
+| Coagulation| 80 W @ 1000 Ω     | 475 kHz ± 19 kHz                 | 57 kHz ± 5 kHz        | 3300V                  | 5.5 ± 20%                  |
+| Fulguration| 40 W @ 1000 Ω     | 410 kHz ± 50 kHz                 | 25 kHz ± 5 kHz        | 3900V                  | 7.7 ± 20%                  |
+| Bipolar    | 30 W @ 200 Ω      | 520 kHz (-14 kHz, +29 kHz)       | 32 kHz ± 5 kHz        | 1200V                  | 6.9 ± 20%                  |
+
+\* an indication of a waveform's ability to coagulate bleeders without a cutting effect
+
+Proffesors responded, requesting more data and research before this may get started. I believe a well thought out document outlining the details of this measurement will be sufficient to gain instructor approval. 
+
+# 11/20 Meeting with Meenakshi at Carle Hospital Cardiovascular Center
+
+Meeting with Meenakshi in the morning of November 20 to get a look at the Bovie Electrosurgical generator. While not a technical meeting, it was very inspring to see the depth and breadth of novel technologies being implemented in the medical space. I was able to visit their surgical training center and look at the Electrosurgical generator. It would have been helpful to be able to take it apart and atempt to reverse engineer the electronics present, However this was not possible given the price of these machines and the fair of permanently damaging its operatio.  
+
+## 11/17
 PCB has been delayed until after fall break
 
-# 11/30
+## 11/30
 
 PCB construction session 
-Parts and PCB have finally arrived, can now start assembly. Total assembly took about 3 hours. No issues with assembly 
+Parts and PCB have finally arrived, can now start assembly. Total assembly took about 3 hours. No issues with assembly.
+During testing there was in issue with the vairac interfacing with the oscilliscope. When the probe was set to high Z input, with the mid voltage stage disconnected, It worked well and I could easily see a smooth sine wave from the variac, measured to be around 59.7 Hz. However when the device was connected, and I tried to turn on the variac, the variac would buzz loudly, and it would be difficult to turn, making me think there was some type of short circuit being created through the oscilliscope. When the device was connected, and there was no oscilliscope probe measuring the variac output, the device and variac worked as expected. After double checking the design and making sure all solder joints were done well and there was no possible short circuit from the Mid Voltage stage, I concluded that the oscilliscope probe must somehow be causing interference when connected to the output of the variac. 
+
+The results of the mid voltage stage are as follows 
+
+| Load | Output Voltage | Output Ripple | AC Input | Rectified DC | Rectified DC Ripple |
+|------|----------------|---------------|----------|--------------|----------------------|
+| 100mA | 5V | 288 mV  | 40V | 39.6V | 6.9V |
+| 0mA   | 5V | 1400 mV | 40V | 39.6V | 6.9V |
+
+The full load ripple is slightly outside the ripple specified in the design document of 250mV. However I am confident that slightly increasing the output capacitance, say from 22uF to 27 uF, would cause a suitable drop in the output voltage ripple that would bring this design within specification. Again with the delays with the PCB we missed an entire round of prototyping and revision that would have allowed for these changes. 
+
+Because of the soft start mechanism in the buck converter, I am not worried about start up transients corrupting the quality of the output voltage and damagin the low voltage analog circuitry for this device. Additionally, there are other safety mechanisms such as under voltage lockout and overvoltage protection to ensure that the device safely and reliably outputs 5V. 
+
+## 12/01
+Demo went well. Proffesor Yu seemed satisfied with the quality of our demonstration, and meeting all demonstration criteria. He however, hinted that the scope of our project may have been too easy. 
+
+## 12/02
+With the senior design demo being completed, this concludes the technical development for this project 
+
+# END OF LAB NOTEBOOK
   
 
