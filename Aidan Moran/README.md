@@ -154,6 +154,12 @@ The full load ripple is slightly outside the ripple specified in the design docu
 
 Because of the soft start mechanism in the buck converter, I am not worried about start up transients corrupting the quality of the output voltage and damagin the low voltage analog circuitry for this device. Additionally, there are other safety mechanisms such as under voltage lockout and overvoltage protection to ensure that the device safely and reliably outputs 5V. 
 
+### Testing integration with low voltage stage
+
+Setup: Power supply used was a varaic. Input was 120V 60Hz, output was tested from 30V-60V AC at 60Hz. No visible issues with the power supply. No smoke, no parts felt excessively hot after testing. The power supply was ran continuously for around 20 minutes, and performad consisntently throughought this timeframe. The Input from the variac was rather noisy. However hoping this is not a pervasive issue as the output from the electrosurgical generator should be higher frequency, but also significantly less noisy. Again this is just a suspicion as we were unable to characterize the output of the ESU this semester, and I do not want to rely on such suspicion for design decisions. May be wise to add a lowpass EMI filter to the input of the buck converter in further design implementations
+
+The low voltage PCB worked identically with the mid voltage stage power supply as with a benchtop DC power supply. All performance waveforms of the low voltage PCB were verified, and we are confident that it would then work during our demo tommorow. 
+
 ## 12/01
 Demo went well. Proffesor Yu seemed satisfied with the quality of our demonstration, and meeting all demonstration criteria. He however, hinted that the scope of our project may have been too easy. 
 
