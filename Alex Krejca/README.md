@@ -14,11 +14,24 @@ Held a meeting with Meenakakshi Singhal, the main member of the Carle Medical Te
 Met with Stephen to go over the design of the low power stage. Put the circuit that was previously designed into LTSpice to see how it functions. Multiple issues in this circuit. Determined that this ESU monitor should be redesigned. 
 # 9/29
 This week, Stephen worked to hash out a starting ESU monitor design that can be implemented for the first breadboard demo next week. Provided updates on the design and reviewed the circuit in simulation to test the functionality. Some of the design calculations noted before, such as the input source voltage divider at the 2000V from the ESU.
-$$ Ratio ≈ 10pF / (10pF + 3900pF) = 10 / 3910 ≈ 1/391 
-$$ 1850V / 391 ≈ 4.7V
-$$ 1 / 307kHz ≈ 3.26 µs
-$$ τ = R * C = 5,600 Ω * 0.000000001 F = 5.6 µs 
-$$ V(ref) = 5V * (R3 / (R6 + R3)) ≈ 0.3V
+
+$$
+\text{Ratio} \approx \frac{10\ \text{pF}}{10\ \text{pF} + 3900\ \text{pF}}
+= \frac{10}{3910}
+\approx \frac{1}{391}.
+$$
+$$
+\frac{1850\ \text{V}}{391} \approx 4.7\ \text{V}.
+$$
+$$
+T = \frac{1}{307\ \text{kHz}} \approx 3.26\ \mu\text{s}.
+$$
+$$
+\tau = R C = 5{,}600\ \Omega \times 1\ \text{nF} = 5.6\ \mu\text{s}.
+$$
+$$
+V_{\text{ref}} = 5\ \text{V}\left(\frac{R_3}{R_6 + R_3}\right) \approx 0.3\ \text{V}.
+$$
 These calculations are important as it reduces the voltage significantly.
 # 10/6
 Met with Stephen in the lab to assemble this first ESU monitor design from simulation. Parts were easily acquired using parts found in the lab and the ECE service shop.
