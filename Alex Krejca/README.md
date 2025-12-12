@@ -15,22 +15,29 @@ Met with Stephen to go over the design of the low power stage. Put the circuit t
 # 9/29
 This week, Stephen worked to hash out a starting ESU monitor design that can be implemented for the first breadboard demo next week. Provided updates on the design and reviewed the circuit in simulation to test the functionality. Some of the design calculations noted before, such as the input source voltage divider at the 2000V from the ESU.
 
+**1. Capacitive Divider Ratio**
 $$
-\text{Ratio} \approx \frac{10\ \text{pF}}{10\ \text{pF} + 3900\ \text{pF}}
-= \frac{10}{3910}
-\approx \frac{1}{391}.
+\text{Ratio} \approx \frac{10\text{pF}}{10\text{pF} + 3900\text{pF}} = \frac{10}{3910} \approx \frac{1}{391}
 $$
+
+**2. Voltage Scaling**
 $$
-\frac{1850\ \text{V}}{391} \approx 4.7\ \text{V}.
+V_{out} = \frac{1850\text{V}}{391} \approx 4.7\text{V}
 $$
+
+**3. Frequency Period**
 $$
-T = \frac{1}{307\ \text{kHz}} \approx 3.26\ \mu\text{s}.
+T = \frac{1}{307\text{kHz}} \approx 3.26\mu\text{s}
 $$
+
+**4. RC Time Constant**
 $$
-\tau = R C = 5{,}600\ \Omega \times 1\ \text{nF} = 5.6\ \mu\text{s}.
+\tau = R \cdot C = 5,600\Omega \cdot 1\text{nF} = 5.6\mu\text{s}
 $$
+
+**5. Reference Voltage (Voltage Divider)**
 $$
-V_{\text{ref}} = 5\ \text{V}\left(\frac{R_3}{R_6 + R_3}\right) \approx 0.3\ \text{V}.
+V_{ref} = 5\text{V} \cdot \left( \frac{R_3}{R_6 + R_3} \right) \approx 0.3\text{V}
 $$
 These calculations are important as it reduces the voltage significantly.
 # 10/6
@@ -43,7 +50,7 @@ Met with TA for our first breadboard demo, everything works successfully in our 
 Breadboard 1 Design: 
 ![alt text](https://github.com/alexkrejca/ec445_neuroguard/blob/main/Alex%20Krejca/IMG_0089.JPG)
 # 10/12
-Timer was added to the ESU monitor for 
+Timer was added to the ESU monitor to match the BOVIE specifications that were noted by the Carle Medical Team. This was done using a 555 Timer IC. 
 # 10/13
 Worked on finishing the design document while Stephen converted the LTSPice simulation onto a PCB in KiCAD before the order deadline on Thursday.
 # 10/17
