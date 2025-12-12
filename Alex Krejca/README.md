@@ -16,29 +16,20 @@ Met with Stephen to go over the design of the low power stage. Put the circuit t
 This week, Stephen worked to hash out a starting ESU monitor design that can be implemented for the first breadboard demo next week. Provided updates on the design and reviewed the circuit in simulation to test the functionality. Some of the design calculations noted before, such as the input source voltage divider at the 2000V from the ESU.
 
 **1. Capacitive Divider Ratio**
-$$
-\text{Ratio} \approx \frac{10\text{pF}}{10\text{pF} + 3900\text{pF}} = \frac{10}{3910} \approx \frac{1}{391}
-$$
+Ratio ≈ 10pF / (10pF + 3900pF) = 10 / 3910 ≈ 1/391 
 
 **2. Voltage Scaling**
-$$
-V_{out} = \frac{1850\text{V}}{391} \approx 4.7\text{V}
-$$
+1850V / 391 ≈ 4.7V
 
 **3. Frequency Period**
-$$
-T = \frac{1}{307\text{kHz}} \approx 3.26\mu\text{s}
-$$
+1 / 307kHz ≈ 3.26 µs
 
 **4. RC Time Constant**
-$$
-\tau = R \cdot C = 5,600\Omega \cdot 1\text{nF} = 5.6\mu\text{s}
-$$
+τ = R * C = 5,600 Ω * 0.000000001 F = 5.6 µs 
 
 **5. Reference Voltage (Voltage Divider)**
-$$
-V_{ref} = 5\text{V} \cdot \left( \frac{R_3}{R_6 + R_3} \right) \approx 0.3\text{V}
-$$
+V(ref) = 5V * (R3 / (R6 + R3)) ≈ 0.3V
+
 These calculations are important as it reduces the voltage significantly.
 # 10/6
 Met with Stephen in the lab to assemble this first ESU monitor design from simulation. Parts were easily acquired using parts found in the lab and the ECE service shop.
