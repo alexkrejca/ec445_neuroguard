@@ -1,6 +1,6 @@
 LTspice 26.0.1 for Windows
 Circuit: D:\ec445_neuroguard\ECU_monitor_V2\ECU_monitor_V2.net
-Start Time: Sun Jan 11 08:10:19 2026
+Start Time: Sun Jan 11 08:24:11 2026
 solver = Normal
 Maximum thread count: 20
 tnom = 27
@@ -16,7 +16,7 @@ Gmin stepping failed to find operating point. Use".option gminsteps=0" to skip a
 Starting source stepping with srcstepmethod=0
 Source stepping succeeded in finding the operating point.
 
-Total elapsed time: 5.659 seconds.
+Total elapsed time: 5.284 seconds.
 
 Files loaded:
 D:\ec445_neuroguard\ECU_monitor_V2\ECU_monitor_V2.net
